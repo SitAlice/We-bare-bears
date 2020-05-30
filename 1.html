@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		.pic1{
+			height: 200px;
+			width: 180px;
+			background-image: url("1.png");
+			background-size: 100% 100%;
+			position: absolute;
+			top: 380px;
+			left:  480px;
+		}
+
+		.pic2{
+			height: 200px;
+			width: 250px;
+			background-image: url("2.png");
+			background-size: 100% 100%;
+			position: absolute;
+			top: 90px;
+			left: 1550px;
+		}
+
+		.pic3{
+			height: 200px;
+			width: 200px;
+			background-image: url(3.png);
+			background-size: 100% 100%;
+			position: absolute;
+			top: 650px;
+			left: 80px;
+		}
+
+		.pic4{
+			height: 200px;
+			width: 200px;
+			background-image: url("4.jpg");
+			background-size: 100% 100%;
+			position: absolute;
+			top: 380px;
+			left: 800px;
+		}
+
+		.pic5{
+			height: 200px;
+			width: 200px;
+			background-image: url("5.png");
+			background-size: 100% 100%;
+			position: absolute;
+			top: 280px;
+			left: 150px;
+		}
+
+		.pic6{
+			height: 200px;
+			width: 200px;
+			background-image: url("6.png");
+			background-size: 100% 100%;
+			position: absolute;
+			top: 400px;
+			left: 1400px;
+		}
+
+		.pic7{
+			height: 200px;
+			width: 160px;
+			background-image: url("7.png");
+			background-size: 100% 100%;
+			position: absolute;
+			top: 80px;
+			left:1100px;
+		}
+
+		.pic8{
+			height: 200px;
+			width: 250px;
+			background-image: url("8.png");
+			background-size: 100% 100%;
+			position: absolute;
+			top:670px;
+			left: 670px;
+		}
+
+		.pic9{
+			height: 200px;
+			width: 200px;
+			background-image: url("9.png");
+			background-size: 100% 100%;
+			position: absolute;
+			top: 670px;
+			left: 1600px;
+		}
+
+		.pic10{
+			height: 200px;
+			width: 200px;
+			background-image: url("10.png");
+			background-size: 100% 100%;
+			position: absolute;
+			top: 80px;
+			left: 390px;
+		}
+
+		.pic11{
+			height: 200px;
+			width: 200px;
+			background-image: url("11.png");
+			background-size: 100% 100%;
+			position: absolute;
+			top: 80px;
+			left: 650px;
+		}
+
+		.pic12{
+			height: 200px;
+			width: 200px;
+			background-image: url("12.png");
+			background-size: 100% 100%;
+			position: absolute;
+			top: 580px;
+			left: 1100px;
+		}
+
+		.box1{
+			height: 200px;
+			width: 200px;
+			background: lightpink;
+			top: 300px;
+			left: 900px;
+			display: none;
+			position: absolute;
+			border-style: solid;
+		}
+
+
+		.box2{
+			height: 200px;
+			width: 200px;
+			background: lightpink;
+			top: 300px;
+			left: 900px;
+			display: none;
+			position: absolute; 
+			border-style: solid;    
+		}
+
+		.bg{
+			height: 900px;
+			width: 1900px;
+			background-image: url(14.jpg);
+			background-size: 100% 100%;
+		}
+	</style>
+</head>
+<body>
+
+<div class="bg" style="display: flex;">
+	<h1  class="sc" style="color: #cf697e;">Счёт:</h1>
+	<h1 class="score" style="color: #cf697e;">0</h1>
+
+	<div class="box1" style="margin-left: auto; margin-right: auto;">
+		<h1 style="text-align: center; padding-top: 50px;">winner</h1>
+	</div>
+	<div class="box2" style="margin-left: auto; margin-right: auto; ">
+		<h1 style="text-align: center; padding-top: 50px;">loser</h1>
+	</div>
+	<div class="pic1 pic"></div>
+	<div class="pic2 pic"></div>
+	<div class="pic3 pic"></div>
+	<div class="pic4 pic"></div>
+	<div class="pic5 pic"></div>
+	<div class="pic6 pic"></div>
+	<div class="pic7 pic"></div>
+	<div class="pic8 pic"></div>
+	<div class="pic9 pic"></div>
+	<div class="pic10 pic"></div>
+	<div class="pic11 pic"></div>
+	<div class="pic12 pic"></div>
+</div>
+
+<script type="text/javascript">
+	let p = document.querySelectorAll(".pic");
+	let scr = document.querySelector(".score");
+	let b1 = document.querySelector(".box1");
+	let b2 = document.querySelector(".box2");
+	let sc = document.querySelector(".sc");
+	num = 0;
+
+
+		for (let i=0;i<12; i++) {
+			p[i].onclick = function(){
+				p[i].style.display = "none";
+					num = num + 1;
+					scr.innerHTML = num;
+
+						if (num > 8) {  
+							b1.style.display= "block";
+							b2.style.display= "none";
+							sc.style.display= "none";
+							scr.style.display= "none";
+							for (let i=0;i<12; i++) {
+								p[i].style.display= "none";
+							}
+						}
+					}
+				}
+
+
+				
+		let lose = function(){
+			if (num < 8) {
+				b2.style.display= "block";
+				b1.style.display= "none";
+				sc.style.display= "none";
+				scr.style.display= "none";
+				for (let i=0;i<12; i++) {
+					p[i].style.display= "none";
+				}
+			}
+		}
+
+					
+	setTimeout(lose, 5000);
+
+
+</script>
+
+
+</body>
+</html>               
